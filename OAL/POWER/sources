@@ -35,3 +35,6 @@ SOURCES =    \
     reset.c         \
     watchdog_sw_rst.c
 
+FILE_VIEW_INCLUDES_FOLDER= \
+    ..\INC\soc_cfg.h \
+

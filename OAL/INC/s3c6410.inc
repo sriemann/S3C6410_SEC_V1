@@ -96,10 +96,10 @@ SYNCMODE            SETL    {TRUE}
 ;TARGET_ARM_CLK    SETA    CLK_450MHZ        ; Sync 450:150:65
 ;TARGET_ARM_CLK    SETA    CLK_532MHZ         ; Sync 532:133:66.5
 ;TARGET_ARM_CLK    SETA    CLK_600MHZ        ; Sync 600:150:75
-TARGET_ARM_CLK    SETA    CLK_666MHZ        ; Sync 666:133.2:66.5
+;TARGET_ARM_CLK    SETA    CLK_666MHZ        ; Sync 666:133.2:66.5
 ;TARGET_ARM_CLK    SETA    CLK_798MHZ        ; Sync 798:133:66.5
 ;TARGET_ARM_CLK    SETA    CLK_800MHZ        ; Sync 800:133.33:66.66
-;TARGET_ARM_CLK    SETA    CLK_900MHZ        ; Sync 900:150:75
+TARGET_ARM_CLK    SETA    CLK_900MHZ        ; Sync 900:150:75
 
 FIN        EQU    12000000
 ;-------------------------------------------------

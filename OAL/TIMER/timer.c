@@ -196,7 +196,7 @@ BOOL OALTimerInit(UINT32 msecPerSysTick, UINT32 countsPerMSec, UINT32 countsMarg
         goto cleanUp;
     }
 
-    InitializeDVS();
+    //InitializeDVS();
 
     //
     // Define ENABLE_WATCH_DOG to enable watchdog timer support.
@@ -241,7 +241,7 @@ UINT32 OALTimerIntrHandler()
     // Reschedule?
     if ((int)(CurMSec - dwReschedTime) >= 0) SysIntr = SYSINTR_RESCHED;
 
-    UpdateDVS();
+   // UpdateDVS();
 
 #ifdef OAL_ILTIMING
     if (g_oalILT.active)
@@ -346,7 +346,7 @@ void OEMIdle(DWORD idleParam)
     curridlelow  = idle.LowPart;
     curridlehigh = idle.HighPart;
 
-    SetCurrentIdleTime((DWORD)(idle.QuadPart/idleconv));
+    //SetCurrentIdleTime((DWORD)(idle.QuadPart/idleconv));
 }
 
 //------------------------------------------------------------------------------
