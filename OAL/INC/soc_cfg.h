@@ -80,10 +80,10 @@
 //#define TARGET_ARM_CLK    CLK_450MHz      //< Sync 450:150:37.5 HCLKx2=300
 //#define TARGET_ARM_CLK    CLK_532MHz      //< Sync 532:133:66.5 HCLKx2=266, Async is same
 //#define TARGET_ARM_CLK    CLK_600MHz        //< Sync 600:150:75 HCLKx2=300
-//#define TARGET_ARM_CLK    CLK_666MHz      //< Sync 666:133.2:66.6 HCLKx2=266.4, Async 666:133:66.5 HCLKx2=266
+#define TARGET_ARM_CLK    CLK_666MHz      //< Sync 666:133.2:66.6 HCLKx2=266.4, Async 666:133:66.5 HCLKx2=266
 //#define TARGET_ARM_CLK    CLK_798MHz      //< Sync 798:133:66.5  HCLKx2=266
 //#define TARGET_ARM_CLK    CLK_800MHz      //< Sync 800:133.33:33.33 HCLKx2=266.66, ASync 800:133:66.5  HCLKx2=266
-#define TARGET_ARM_CLK    CLK_900MHz      //< Sync 900:150:75, HCLKx2=300
+//#define TARGET_ARM_CLK    CLK_900MHz      //< Sync 900:150:75, HCLKx2=300
 
 /// MPLL Setting
 #if (TARGET_ARM_CLK == CLK_400MHz)
@@ -181,12 +181,12 @@
 
 #endif  // PRESET_CLOCK
 
-#define Startup_S3C6410_PCLK    (66500000)
+#define Startup_S3C6410_PCLK     S3C6410_PCLK//(66500000)
 //------------------------------------------------------------------------------
 // SMDK6410 EPLL Output Frequency
 //------------------------------------------------------------------------------
-//#define S3C6410_ECLK        (CLK_96MHz)        // 96 MHz         for USB Host, SD/HSMMC..
-#define S3C6410_ECLK        (84666667)        // 84,666,667 Hz     for IIS Sampling Rate 44.1 KHz (384fs)
+#define S3C6410_ECLK        (CLK_96MHz)        // 96 MHz         for USB Host, SD/HSMMC..
+//#define S3C6410_ECLK        (84666667)        // 84,666,667 Hz     for IIS Sampling Rate 44.1 KHz (384fs)
 //#define S3C6410_ECLK        (92160000)        // 92,160,000 Hz     for IIS Sampling Rate 48 KHz (384fs)
 
 //------------------------------------------------------------------------------

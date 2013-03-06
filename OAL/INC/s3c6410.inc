@@ -96,10 +96,10 @@ SYNCMODE            SETL    {TRUE}
 ;TARGET_ARM_CLK    SETA    CLK_450MHZ        ; Sync 450:150:65
 ;TARGET_ARM_CLK    SETA    CLK_532MHZ         ; Sync 532:133:66.5
 ;TARGET_ARM_CLK    SETA    CLK_600MHZ        ; Sync 600:150:75
-;TARGET_ARM_CLK    SETA    CLK_666MHZ        ; Sync 666:133.2:66.5
+TARGET_ARM_CLK    SETA    CLK_666MHZ        ; Sync 666:133.2:66.5
 ;TARGET_ARM_CLK    SETA    CLK_798MHZ        ; Sync 798:133:66.5
 ;TARGET_ARM_CLK    SETA    CLK_800MHZ        ; Sync 800:133.33:66.66
-TARGET_ARM_CLK    SETA    CLK_900MHZ        ; Sync 900:150:75
+;TARGET_ARM_CLK    SETA    CLK_900MHZ        ; Sync 900:150:75
 
 FIN        EQU    12000000
 ;-------------------------------------------------
@@ -113,8 +113,8 @@ FIN        EQU    12000000
 ;-------------------------------------------------
 ; Change S3C6410_ECLK definition for EPLL Fout
 ;-------------------------------------------------
-;S3C6410_ECLK    SETA    ECLK_96MHZ
-S3C6410_ECLK    SETA    ECLK_84MHZ
+S3C6410_ECLK    SETA    ECLK_96MHZ
+;S3C6410_ECLK    SETA    ECLK_84MHZ
 ;S3C6410_ECLK    SETA    ECLK_92MHZ
 ;-------------------------------------------------
 
@@ -248,16 +248,16 @@ HCLK    EQU    (MPLL_CLK/(HCLKx2_DIV+1)/(HCLK_DIV+1))
 ; For 532:133:66.5
 ; Set most Stable Clock as Stratup Clock
 ;Fvco=1064MHz, Fout=532MHz
-Startup_APLL_MVAL    EQU    (266)
-Startup_APLL_PVAL    EQU    (3)
-Startup_APLL_SVAL    EQU    (1)
-Startup_APLL_CLK     EQU    (((FIN>>Startup_APLL_SVAL)/Startup_APLL_PVAL)*Startup_APLL_MVAL)    ; APLL Clock
+Startup_APLL_MVAL    EQU    APLL_MVAL;(266)
+Startup_APLL_PVAL    EQU    APLL_PVAL;(3)
+Startup_APLL_SVAL    EQU    APLL_SVAL;(1)
+Startup_APLL_CLK     EQU    APLL_CLK;(((FIN>>Startup_APLL_SVAL)/Startup_APLL_PVAL)*Startup_APLL_MVAL)    ; APLL Clock
 
-Startup_APLL_DIV    EQU    (1-1)    ; ARM_CLK = APLL_CLK
-Startup_HCLKx2_DIV  EQU    (2-1)    ; HCLKx2 = APLL_CLK/2
-Startup_HCLK_DIV    EQU    (2-1)    ; AHB_CLK = HCLKx2/2
-Startup_PCLK_DIV    EQU    (4-1)    ; PCLK = HCLKx2/4
-Startup_ARM_CLK    EQU    (Startup_APLL_CLK/(Startup_APLL_DIV+1))
+Startup_APLL_DIV    EQU    APLL_DIV;(1-1)    ; ARM_CLK = APLL_CLK
+Startup_HCLKx2_DIV  EQU    HCLKx2_DIV;(2-1)    ; HCLKx2 = APLL_CLK/2
+Startup_HCLK_DIV    EQU    HCLK_DIV;(2-1)    ; AHB_CLK = HCLKx2/2
+Startup_PCLK_DIV    EQU    PCLK_DIV;(4-1)    ; PCLK = HCLKx2/4
+Startup_ARM_CLK    EQU     ARM_CLK;(Startup_APLL_CLK/(Startup_APLL_DIV+1))
 
 
     ; EPLL Fout 96 MHz
